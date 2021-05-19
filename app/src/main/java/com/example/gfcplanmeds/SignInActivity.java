@@ -27,9 +27,9 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(SignInViewModel.class);
-        checkIfSignedIn();
         setContentView(R.layout.signin_activity);
+        checkIfSignedIn();
+        viewModel = new ViewModelProvider(this).get(SignInViewModel.class);
     }
 
     private void checkIfSignedIn() {
