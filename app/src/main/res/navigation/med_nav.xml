@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/med_nav"
+    app:startDestination="@id/informationFragment3">
+    <fragment
+        android:id="@+id/informationFragment3"
+        android:name="com.example.gfcplanmeds.InformationFragment"
+        android:label="Information"
+        tools:layout="@layout/fragment_information" />
+    <fragment
+        android:id="@+id/medicineFragment"
+        android:name="com.example.gfcplanmeds.MedicineFragment"
+        android:label="Medicine"
+        tools:layout="@layout/fragment_medicine" />
+    <fragment
+        android:id="@+id/doctorFragment"
+        android:name="com.example.gfcplanmeds.DoctorFragment"
+        android:label="Doctor"
+        tools:layout="@layout/fragment_doctor" />
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="com.example.gfcplanmeds.AlarmFragment"
+        android:label="Alarm"
+        tools:layout="@layout/fragment_alarm" />
+</navigation>

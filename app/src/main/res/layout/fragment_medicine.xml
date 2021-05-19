@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedicineFragment">
+
+    <LinearLayout
+        android:id="@+id/MedicineFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Medicine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Medicine"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/MedicineName"
+            android:layout_width="421dp"
+            android:layout_height="39dp"
+            android:text="Name of Medicine" />
+
+        <TextView
+            android:id="@+id/Dosage"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Dosage" />
+
+        <TextView
+            android:id="@+id/TakenAt"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:text="Should be taken at" />
+
+        <TextView
+            android:id="@+id/DuringTheDay"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Times during the day" />
+
+        <TextView
+            android:id="@+id/DuringTheWeek"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Times during the week" />
+
+    </LinearLayout>
+
+</FrameLayout>

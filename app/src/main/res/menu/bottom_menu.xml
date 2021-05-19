@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+          android:id="@+id/InformationFragment"
+          android:icon="@drawable/ic_home" />
+    <item android:title="Medicine"
+          android:id="@+id/MedicineFragment"
+          android:icon="@drawable/ic_medical" />
+    <item android:title="Alarm"
+          android:id="@+id/AlarmFragment"
+          android:icon="@drawable/ic_alarm" />
+    <item android:title="Doctor's office"
+          android:id="@+id/DoctorFragment"
+          android:icon="@drawable/ic_call" />
+</menu>
