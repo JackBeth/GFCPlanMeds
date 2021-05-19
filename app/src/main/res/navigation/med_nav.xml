@@ -6,22 +6,22 @@
     app:startDestination="@id/informationFragment3">
     <fragment
         android:id="@+id/informationFragment3"
-        android:name="com.example.gfcplanmeds.InformationFragment"
+        android:name="com.example.gfcplanmeds.navigationbar.InformationFragment"
         android:label="Information"
         tools:layout="@layout/fragment_information" />
     <fragment
         android:id="@+id/medicineFragment"
-        android:name="com.example.gfcplanmeds.MedicineFragment"
+        android:name="com.example.gfcplanmeds.navigationbar.MedicineFragment"
         android:label="Medicine"
         tools:layout="@layout/fragment_medicine" />
     <fragment
         android:id="@+id/doctorFragment"
-        android:name="com.example.gfcplanmeds.DoctorFragment"
+        android:name="com.example.gfcplanmeds.navigationbar.DoctorFragment"
         android:label="Doctor"
         tools:layout="@layout/fragment_doctor" />
     <fragment
-        android:id="@+id/alarmFragment"
-        android:name="com.example.gfcplanmeds.AlarmFragment"
-        android:label="Alarm"
-        tools:layout="@layout/fragment_alarm" />
+        android:id="@+id/timePickerFragment"
+        android:name="com.example.gfcplanmeds.navigationbar.AlarmSettings.TimePickerFragment"
+        android:label="fragment_time_picker"
+        tools:layout="@layout/fragment_time_picker" />
 </navigation>

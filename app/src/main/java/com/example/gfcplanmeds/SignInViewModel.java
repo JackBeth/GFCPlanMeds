@@ -5,6 +5,8 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.gfcplanmeds.data.UserLiveData;
+import com.example.gfcplanmeds.data.UserRepository;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SignInViewModel extends AndroidViewModel {
@@ -15,7 +17,7 @@ public class SignInViewModel extends AndroidViewModel {
         userRepository = UserRepository.getInstance(app);
     }
 
-    public LiveData<FirebaseUser> getCurrentUser(){
+    public LiveData<UserLiveData> getCurrentUser(){
         return userRepository.getCurrentUser();
     }
 }

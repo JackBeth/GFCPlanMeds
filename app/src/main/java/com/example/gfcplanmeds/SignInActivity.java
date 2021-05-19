@@ -3,66 +3,69 @@ package com.example.gfcplanmeds;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.firebase.ui.auth.AuthUI;
+import com.example.gfcplanmeds.data.User;
+import com.example.gfcplanmeds.navigationbar.MainActivity;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class SignInActivity extends AppCompatActivity {
-private static final int RC_SIGN_IN = 42;
-private SignInViewModel viewModel;
+    private static final int RC_SIGN_IN = 42;
+    private SignInViewModel viewModel;
+    private FirebaseFirestore userDatabase = FirebaseFirestore.getInstance();
+    private CollectionReference collectionReference = userDatabase.collection("users");
 
-@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    viewModel = new ViewModelProvider(this).get(SignInViewModel.class);
-    checkIfSignedIn();
-    setContentView(R.layout.signin_activity);
-}
+        super.onCreate(savedInstanceState);
+        viewModel = new ViewModelProvider(this).get(SignInViewModel.class);
+        checkIfSignedIn();
+        setContentView(R.layout.signin_activity);
+    }
 
-private void checkIfSignedIn() {
-    viewModel.getCurrentUser().observe(this, user ->{
+    private void checkIfSignedIn() {
+   /* viewModel.getCurrentUser().observe(this, user ->{
         if (user != null)
             goToMainActivity();
-    });
-}
+    });*/
 
-private void goToMainActivity() {
-    startActivity(new Intent(this, MainActivity.class));
-    finish();
-}
+        Button SignInButton = findViewById(R.id.button2);
+        SignInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-public void signIn(View v) {
-    List<AuthUI.IdpConfig> providers = Arrays.asList(
-            new AuthUI.IdpConfig.EmailBuilder().build(),
-            new AuthUI.IdpConfig.GoogleBuilder().build());
-
-    Intent signInIntent = AuthUI.getInstance()
-            .createSignInIntentBuilder()
-            .setAvailableProviders(providers)
-            .setLogo(R.drawable.logo) //add in logo/picture in drawable.
-            .build();
-
-    startActivityForResult(signInIntent, RC_SIGN_IN);
-}
-
-@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-    if (requestCode == RC_SIGN_IN) {
-        handleSignInRequest(resultCode);
+                TextView UserNameView = findViewById(R.id.SignInUserName);
+                TextView PasswordView = findViewById(R.id.SignInPassword);
+                collectionReference
+                        .whereEqualTo("UserName", UserNameView.getText())
+                        .whereEqualTo("Password", PasswordView.getText())
+                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot querySnapshot) {
+                        List<User> userList = querySnapshot.toObjects(User.class);
+                        User user = userList.get(0);
+                        goToMainActivity(user);
+                    }
+                });
+            }
+        });
     }
-}
 
-private void handleSignInRequest(int resultCode) {
-    if (resultCode == RESULT_OK)
-        goToMainActivity();
-    else
-        Toast.makeText(this, "Sign In Cancelled", Toast.LENGTH_SHORT).show();
-}
+    private void goToMainActivity(User user) {
+        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+        intent.putExtra("Data", user);
+
+        startActivity(new Intent(this, MainActivity.class));
+        //finish();
+    }
+
 }

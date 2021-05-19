@@ -8,7 +8,7 @@
           android:id="@+id/MedicineFragment"
           android:icon="@drawable/ic_medical" />
     <item android:title="Alarm"
-          android:id="@+id/AlarmFragment"
+          android:id="@+id/TimePickerFragment"
           android:icon="@drawable/ic_alarm" />
     <item android:title="Doctor's office"
           android:id="@+id/DoctorFragment"

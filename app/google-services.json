@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3833470324",
+    "project_id": "gfc-planmeds",
+    "storage_bucket": "gfc-planmeds.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3833470324:android:d2f1dea38ebe657bd72021",
+        "android_client_info": {
+          "package_name": "com.example.gfcplanmeds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3833470324-lffm62r7f3uuvd614msmhag6pmqvb7ei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxqddMc0kIA5l6aKC5nOLbEc1al4vN8vQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3833470324-lffm62r7f3uuvd614msmhag6pmqvb7ei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
