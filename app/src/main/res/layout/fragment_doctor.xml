@@ -16,32 +16,42 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="Doctor's office"
-            android:textSize="25sp"
+            android:textSize="35sp"
             android:background="@color/teal_200"/>
 
         <TextView
             android:id="@+id/OfficeName"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="Office Name" />
+            android:text="Office Name"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/DoctorName"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:text="Doctor's Name" />
+            android:text="Doctor's Name"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/CallDoctor"
-            android:layout_width="147dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="210dp"
             android:layout_height="66dp"
-            android:text="Call Doctor" />
+            android:text="Call Doctor"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/LinkToHomePage"
+            android:layout_marginTop="40dp"
             android:layout_width="211dp"
             android:layout_height="wrap_content"
-            android:text="Go to homepage" />
+            android:text="Go to homepage"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </LinearLayout>

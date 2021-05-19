@@ -17,38 +17,54 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="Medicine"
-            android:textSize="25sp"
-            android:background="@color/teal_200"/>
+            android:textSize="35sp"
+            android:background="@color/teal_200"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/MedicineName"
+            android:layout_marginTop="20dp"
             android:layout_width="421dp"
             android:layout_height="39dp"
-            android:text="Name of Medicine" />
+            android:text="Name of Medicine"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/Dosage"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Dosage" />
+            android:text="Dosage"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/TakenAt"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="43dp"
-            android:text="Should be taken at" />
+            android:text="Should be taken at"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/DuringTheDay"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Times during the day" />
+            android:text="Times during the day"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/DuringTheWeek"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Times during the week" />
+            android:text="Times during the week"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
