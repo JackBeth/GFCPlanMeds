@@ -46,14 +46,17 @@ public class SignInActivity extends AppCompatActivity {
                 TextView UserNameView = findViewById(R.id.SignInUserName);
                 TextView PasswordView = findViewById(R.id.SignInPassword);
                 collectionReference
-                        .whereEqualTo("UserName", UserNameView.getText())
-                        .whereEqualTo("Password", PasswordView.getText())
                         .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot querySnapshot) {
                         List<User> userList = querySnapshot.toObjects(User.class);
-                        User user = userList.get(0);
-                        goToMainActivity(user);
+                        User currentUser = new User();
+
+                        for (User user : userList) {
+                            if (user.Password.equals(PasswordView.getText().toString()) && user.UserName.equals(UserNameView.getText().toString()))
+                                currentUser = user;
+                        }
+                        goToMainActivity(currentUser);
                     }
                 });
             }
