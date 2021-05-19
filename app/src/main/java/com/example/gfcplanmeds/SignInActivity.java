@@ -74,7 +74,7 @@ public class SignInActivity extends AppCompatActivity {
         Intent intent = new Intent(SignInActivity.this, MainActivity.class);
         intent.putExtra("Data", user);
 
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(intent);
         //finish();
     }
 

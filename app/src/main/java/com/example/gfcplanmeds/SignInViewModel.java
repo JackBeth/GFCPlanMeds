@@ -4,20 +4,20 @@ import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
-import com.example.gfcplanmeds.data.UserLiveData;
-import com.example.gfcplanmeds.data.UserRepository;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.gfcplanmeds.data.User;
 
-public class SignInViewModel extends AndroidViewModel {
-    private final UserRepository userRepository;
+public class SignInViewModel extends ViewModel {
 
-    public SignInViewModel(Application app){
-        super(app);
-        userRepository = UserRepository.getInstance(app);
+    private MutableLiveData<User> currentUser;
+
+    public LiveData<User> getUser() {
+        return null;
     }
 
-    public LiveData<UserLiveData> getCurrentUser(){
-        return userRepository.getCurrentUser();
+    private void LoadUser() {
+
     }
 }

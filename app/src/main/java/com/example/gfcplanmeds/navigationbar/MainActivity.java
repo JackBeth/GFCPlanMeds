@@ -21,6 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.gfcplanmeds.R;
 import com.example.gfcplanmeds.SignInActivity;
+import com.example.gfcplanmeds.data.User;
 import com.example.gfcplanmeds.navigationbar.AlarmSettings.TimePickerFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -28,17 +29,24 @@ import com.google.android.material.navigation.NavigationView;
 import static androidx.navigation.ui.NavigationUI.setupActionBarWithNavController;
 
 public class MainActivity extends AppCompatActivity {
-    AppBarConfiguration appBarConfiguration;
+
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            currentUser = (User) bundle.get("Data");
+        }
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigationBar);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new InformationFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new InformationFragment(currentUser)).commit();
 
         SignOutButton();
 
@@ -51,13 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.InformationFragment:
-                    selectedFragment = new InformationFragment();
+                    selectedFragment = new InformationFragment(currentUser);
                     break;
                 case R.id.DoctorFragment:
-                    selectedFragment = new DoctorFragment();
+                    selectedFragment = new DoctorFragment(currentUser);
                     break;
                 case R.id.MedicineFragment:
-                    selectedFragment = new MedicineFragment();
+                    selectedFragment = new MedicineFragment(currentUser);
                     break;
                 case R.id.timePickerFragment:
                     selectedFragment = new TimePickerFragment();
