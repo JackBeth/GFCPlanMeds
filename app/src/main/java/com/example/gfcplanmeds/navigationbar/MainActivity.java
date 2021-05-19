@@ -2,6 +2,7 @@ package com.example.gfcplanmeds.navigationbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toolbar;
@@ -9,6 +10,7 @@ import android.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.NavHost;
@@ -19,6 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.gfcplanmeds.R;
 import com.example.gfcplanmeds.SignInActivity;
+import com.example.gfcplanmeds.navigationbar.AlarmSettings.TimePickerFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -32,19 +35,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NavController navController = Navigation.findNavController(this, R.id.fragment);
-        appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.InformationFragment, R.id.DoctorFragment, R.id.MedicineFragment, R.id.timePickerFragment).build();
-
-
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigationBar);
-        NavigationUI.setupActionBarWithNavController(this, navController,appBarConfiguration);
-        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new InformationFragment()).commit();
 
         SignOutButton();
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+
+            switch (item.getItemId()) {
+                case R.id.InformationFragment:
+                    selectedFragment = new InformationFragment();
+                    break;
+                case R.id.DoctorFragment:
+                    selectedFragment = new DoctorFragment();
+                    break;
+                case R.id.MedicineFragment:
+                    selectedFragment = new MedicineFragment();
+                    break;
+                case R.id.timePickerFragment:
+                    selectedFragment = new TimePickerFragment();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment, selectedFragment).commit();
+
+            return true;
+        }
+    };
 
     private void SignOutButton() {
         Button SignOutButton = findViewById(R.id.button);
