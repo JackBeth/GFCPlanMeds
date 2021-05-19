@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -51,12 +52,18 @@ public class SignInActivity extends AppCompatActivity {
                     public void onSuccess(QuerySnapshot querySnapshot) {
                         List<User> userList = querySnapshot.toObjects(User.class);
                         User currentUser = new User();
+                        boolean success = false;
 
                         for (User user : userList) {
-                            if (user.Password.equals(PasswordView.getText().toString()) && user.UserName.equals(UserNameView.getText().toString()))
+                            if (user.Password.equals(PasswordView.getText().toString())
+                                    && user.UserName.equals(UserNameView.getText().toString())) {
                                 currentUser = user;
+                                success=true;
+                                goToMainActivity(currentUser);
+                            }
                         }
-                        goToMainActivity(currentUser);
+                        if (!success)
+                        Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
