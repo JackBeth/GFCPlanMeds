@@ -8,7 +8,7 @@ The application should be user-friendly so that most elderly would be able to us
 
 ---
 ## A list of MoSCoW prioritized requirements
-(The lines that are crossed out has been delievered in the current version of the app.)
+(The lines that are crossed out have been delievered in the current version of the app.)
 
 ### Must have:
 -	The User must be able to input their information into the application.
