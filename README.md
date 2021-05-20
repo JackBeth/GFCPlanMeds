@@ -1,6 +1,6 @@
 # GFCPlanMeds
 
-##Link to Youtube Demonstration of the App
+## Link to Youtube Demonstration of the App
 https://youtu.be/MXiVuf7Jfj8
 
 ---
