@@ -1,5 +1,6 @@
 package com.example.gfcplanmeds.navigationbar;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,7 +43,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
          holder.parent_layout.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Toast.makeText(context ,medicineNames.get(position).MedicineName, Toast.LENGTH_SHORT).show();
+                 TextView textViewName = (TextView) ((Activity) context).findViewById(R.id.MedicineName);
+                 TextView textViewDosage = (TextView) ((Activity) context).findViewById(R.id.Dosage);
+                 TextView textViewTakenAt = (TextView) ((Activity) context).findViewById(R.id.TakenAt);
+                 TextView textViewDay = (TextView) ((Activity) context).findViewById(R.id.DuringTheDay);
+                 TextView textViewWeek = (TextView) ((Activity) context).findViewById(R.id.DuringTheWeek);
+
+                 textViewName.setText(medicineNames.get(position).MedicineName);
+                 textViewDosage.setText(medicineNames.get(position).Dosage);
+                 textViewTakenAt.setText(medicineNames.get(position).ShouldBeTaken);
+                 textViewDay.setText(medicineNames.get(position).TimesDay);
+                 textViewWeek.setText(medicineNames.get(position).TimesWeek);
              }
          });
     }
