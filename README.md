@@ -8,19 +8,20 @@ The application should be user-friendly so that most elderly would be able to us
 
 ---
 ## A list of MoSCoW prioritized requirements
+(The lines that are crossed out have been delievered in the current version of the app.)
 
 ### Must have:
 -	The User must be able to input their information into the application.
--	The App must store the user information.
--	The User must be able to log in or create a user.
+-	~~The App must store the user information.~~
+-	~~The User must be able to log in~~ or create a user.
+-	~~The App must be able to store information about the medicine, such as the dosage, when it should be taken and how often.~~
 -	The User must be able to set an alarm for when to take the medicine
--	The App must be able to store information about the medicine, such as the dosage, when it should be taken and how often.
 
 ### Should have:
+-	~~The App should have a direct link/number/email to the user’s doctor’s office, to make it easier to reorder or report any side effects.~~
+-	~~The App should have an overview of what kinds of medicine to take, when and what dosage.~~
 -	The User should be able to scan a medicines barcode through the camera and store the information about it.
--	The App should have a direct link/number/email to the user’s doctor’s office, to make it easier to reorder or report any side effects.
 -	The App should send out a message confirming the time of the set alarm.
--	The App should have an overview of what kinds of medicine to take, when and what dosage.
 -	The App should push a message to the user (in advance) when a medicine runs out.
 
 ### Could have:
