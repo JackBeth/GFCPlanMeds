@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.gfcplanmeds.R;
 import com.example.gfcplanmeds.data.User;
@@ -38,6 +39,7 @@ public class TimePickerFragment extends Fragment{
                 intent.putExtra(AlarmClock.EXTRA_HOUR, textHours.getText());
                 intent.putExtra(AlarmClock.EXTRA_MINUTES, textMin.getText());
 
+                Toast.makeText(getContext(), "Alarm has been added", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });
