@@ -1,5 +1,8 @@
 # GFCPlanMeds
 
+##Link to Youtube Demonstration of the App
+https://youtu.be/MXiVuf7Jfj8
+
 ---
 ## Brief description of the application and the motivation behind it
 The initial idea is that it should be an app that can help people manage their medicine (the elderly as the main priority).
@@ -15,13 +18,13 @@ The application should be user-friendly so that most elderly would be able to us
 -	~~The App must store the user information.~~
 -	~~The User must be able to log in~~ or create a user.
 -	~~The App must be able to store information about the medicine, such as the dosage, when it should be taken and how often.~~
--	The User must be able to set an alarm for when to take the medicine
+-	The User must be able to set an alarm for when to take the medicine (Almost implemented completely)
 
 ### Should have:
 -	~~The App should have a direct link/number/email to the user’s doctor’s office, to make it easier to reorder or report any side effects.~~
 -	~~The App should have an overview of what kinds of medicine to take, when and what dosage.~~
 -	The User should be able to scan a medicines barcode through the camera and store the information about it.
--	The App should send out a message confirming the time of the set alarm.
+-	~~The App should send out a message confirming the time of the set alarm.~~
 -	The App should push a message to the user (in advance) when a medicine runs out.
 
 ### Could have:
@@ -38,3 +41,15 @@ The application should be user-friendly so that most elderly would be able to us
 -	The App will not notify the doctor in case the user either forgets to take the medicine or forgets to reorder it.
 -	The App will not be offering the usage of NEM-ID to log in.
 
+---
+## Documentation
+
+The focus has been on creating an application that would be able to store information about the user, the user’s medicine, storing and previewing, as well as having direct contact to the user’s doctor. On the Information view, it is possible to retrieve the information gathered about the signed in user, who’s information is stored in Firebase Cloud Firestore. At the specific moment, it is not possible for user’s to create a profile. This would obviously be one of the requirements that should be fulfilled on the next version of the app. 
+The alarm functionality has been implemented, however, it is not currently working properly due to unknown reasons in the current version of the application, for demonstration purposes, dummy data have been used, to prove the functionality.
+
+The app has not implemented the possibility of scanning a barcode using a camera. This should be implemented in a later version. The app’s database should have all the different kinds of medicine that exist in the world listed, in order for the user to choose between them.
+The current version does not have a possibility of selecting, which medicines have expired. This could be done by adding a button to each specific medicine, to delete it from the current user’s medicine list. 
+
+Furthermore, the medicine view does not have extra space for the doctor to add extra notes. However, this could be done by having a connection directly to the doctor’s system, so that it retrieves the notes from the doctor. This version of the app does not have the possibility of tracking how much medicine is left in the package; therefore, it cannot push a message when the medicine runs out as well.
+
+In the later development of the application there is a desire to connect it to Nem-Id for better usability. This would also optimize the process of retrieving the specific information about each user. Regarding the medicine view, the desired effect would be that the app would take the information about which medicine the specific user needs, as well as which ingredients it contains, directly from the doctor’s input in their system.
