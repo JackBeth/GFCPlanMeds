@@ -27,10 +27,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/AlarmText"
+                    android:id="@+id/AlarmHours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No Alarm is set"
+                    android:text="Set Hours"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +39,44 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.204"
                     android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/editTextNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="112dp"
+                    tools:layout_editor_absoluteY="201dp" />
+
+                <TextView
+                    android:id="@+id/AlarmMinutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set Minutes"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="176dp"
+                    tools:layout_editor_absoluteY="287dp" />
+
+                <EditText
+                    android:id="@+id/editTextNumber2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="112dp"
+                    tools:layout_editor_absoluteY="343dp" />
+
+                <Button
+                    android:id="@+id/SetAlarmButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SET ALARM"
+                    tools:layout_editor_absoluteX="174dp"
+                    tools:layout_editor_absoluteY="487dp" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
