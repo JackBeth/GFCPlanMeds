@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.gfcplanmeds.R;
 import com.example.gfcplanmeds.data.User;
 
-public class TimePickerFragment extends Fragment {
+public class TimePickerFragment extends Fragment{
 
     private User currentUser;
 
