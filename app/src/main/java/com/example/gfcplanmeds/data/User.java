@@ -1,6 +1,7 @@
 package com.example.gfcplanmeds.data;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class User implements Serializable {
 
@@ -10,6 +11,9 @@ public class User implements Serializable {
     public String PhoneNo;
     public String DoctorName;
     public String OfficeName;
+
+    public List<Medicine> medicines;
+
 
     public User(){
     }

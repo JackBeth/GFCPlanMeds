@@ -20,15 +20,26 @@
         app:layout_constraintTop_toBottomOf="@+id/SignInPassword"
         app:layout_constraintVertical_bias="0.287" />
 
+    <TextView
+        android:id="@+id/UserNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="292dp"
+        android:text="UserName"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/SignInUserName"
         android:layout_width="129dp"
         android:layout_height="41dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="284dp"
         android:background="@color/white"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toEndOf="@+id/UserNameLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,11 +47,11 @@
         android:id="@+id/SignInPassword"
         android:layout_width="129dp"
         android:layout_height="41dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toEndOf="@+id/PasswordLabel"
         app:layout_constraintTop_toBottomOf="@+id/SignInUserName" />
 
@@ -48,23 +59,12 @@
         android:id="@+id/PasswordLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
         android:text="Password"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserNameLabel" />
-
-    <TextView
-        android:id="@+id/UserNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="288dp"
-        android:text="UserName"
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView1"
