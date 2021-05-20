@@ -5,6 +5,7 @@ import java.util.List;
 
 public class User implements Serializable {
 
+    public String Uid;
     public String UserName;
     public String Password;
     public String Email;

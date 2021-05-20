@@ -9,6 +9,10 @@ public class Medicine {
     public String TimesDay;
     public String TimesWeek;
 
+    public Medicine() {
+
+    }
+
     public Medicine(String medicineName, String dosage, String shouldBeTaken, String timesDay, String timesWeek) {
         MedicineName = medicineName;
         Dosage = dosage;

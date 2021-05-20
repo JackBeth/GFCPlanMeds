@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gfcplanmeds.data.Medicine;
 import com.example.gfcplanmeds.data.User;
 import com.example.gfcplanmeds.navigationbar.MainActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -59,12 +60,13 @@ public class SignInActivity extends AppCompatActivity {
                         for (User user : userList) {
                             if (user.Password.equals(PasswordView.getText().toString())
                                     && user.UserName.equals(UserNameView.getText().toString())) {
+
+
+                                String userId = querySnapshot.getDocuments().get(0).getId();
                                 currentUser = user;
-
-                               String b = querySnapshot.getDocuments().get(0).getId();
-                                Iterable<CollectionReference> collectionReferences = (Iterable<CollectionReference>) collectionReference.document(b).collection("Medicines");
-
+                                currentUser.Uid = userId;
                                 success=true;
+
                                 goToMainActivity(currentUser);
                             }
                         }

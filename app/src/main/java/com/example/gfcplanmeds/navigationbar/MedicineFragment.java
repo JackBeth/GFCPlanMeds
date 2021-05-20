@@ -12,11 +12,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gfcplanmeds.R;
+import com.example.gfcplanmeds.data.Medicine;
 import com.example.gfcplanmeds.data.User;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.List;
 
 public class MedicineFragment extends Fragment {
 
     private User currentUser;
+    private FirebaseFirestore userDatabase = FirebaseFirestore.getInstance();
+    private CollectionReference collectionReference = userDatabase.collection("users");
 
     public MedicineFragment(User currentUser) {
         this.currentUser = currentUser;
@@ -32,8 +41,19 @@ public class MedicineFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(currentUser.Medicines, this.getActivity());
-        recyclerView.setAdapter(recyclerViewAdapter);
+        CollectionReference collectionReferences = collectionReference.document(currentUser.Uid).collection("Medicines");
+
+        collectionReferences.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                List<Medicine> medicineList = queryDocumentSnapshots.toObjects(Medicine.class);
+
+                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(medicineList, getActivity());
+                recyclerView.setAdapter(recyclerViewAdapter);
+            }
+        });
+
+
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         return view;
