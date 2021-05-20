@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.MedicineFragment:
                     selectedFragment = new MedicineFragment(currentUser);
                     break;
-                case R.id.timePickerFragment:
+                case R.id.TimePickerFragment:
                     selectedFragment = new TimePickerFragment(currentUser);
                     break;
             }
