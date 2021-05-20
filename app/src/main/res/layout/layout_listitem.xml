@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/MedicineName1"
-        android:layout_width="85dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Panodil"
         android:textColor="@color/black"
         android:textSize="20sp"
