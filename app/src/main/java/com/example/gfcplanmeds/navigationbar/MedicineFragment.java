@@ -32,7 +32,7 @@ public class MedicineFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(currentUser.medicines, this.getActivity());
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(currentUser.Medicines, this.getActivity());
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 

@@ -50,6 +50,8 @@ public class SignInActivity extends AppCompatActivity {
                         .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot querySnapshot) {
+
+
                         List<User> userList = querySnapshot.toObjects(User.class);
                         User currentUser = new User();
                         boolean success = false;
@@ -58,6 +60,10 @@ public class SignInActivity extends AppCompatActivity {
                             if (user.Password.equals(PasswordView.getText().toString())
                                     && user.UserName.equals(UserNameView.getText().toString())) {
                                 currentUser = user;
+
+                               String b = querySnapshot.getDocuments().get(0).getId();
+                                Iterable<CollectionReference> collectionReferences = (Iterable<CollectionReference>) collectionReference.document(b).collection("Medicines");
+
                                 success=true;
                                 goToMainActivity(currentUser);
                             }

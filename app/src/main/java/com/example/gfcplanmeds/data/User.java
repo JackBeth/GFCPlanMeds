@@ -12,7 +12,7 @@ public class User implements Serializable {
     public String DoctorName;
     public String OfficeName;
 
-    public List<Medicine> medicines;
+    public List<Medicine> Medicines;
 
 
     public User(){
