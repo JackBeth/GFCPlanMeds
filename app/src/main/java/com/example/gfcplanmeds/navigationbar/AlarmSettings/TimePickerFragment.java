@@ -9,8 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gfcplanmeds.R;
+import com.example.gfcplanmeds.data.User;
 
 public class TimePickerFragment extends Fragment {
+
+    private User currentUser;
+
+    public TimePickerFragment(User currentUser) {
+        this.currentUser = currentUser;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -6,11 +6,11 @@
           android:icon="@drawable/ic_home" />
     <item android:title="Medicine"
           android:id="@+id/MedicineFragment"
-          android:icon="@drawable/ic_medical" />
+          android:icon="@drawable/ic_medical"/>
     <item android:title="Alarm"
           android:id="@+id/TimePickerFragment"
-          android:icon="@drawable/ic_alarm" />
+          android:icon="@drawable/ic_alarm"/>
     <item android:title="Doctor's office"
           android:id="@+id/DoctorFragment"
-          android:icon="@drawable/ic_call" />
+          android:icon="@drawable/ic_call"/>
 </menu>

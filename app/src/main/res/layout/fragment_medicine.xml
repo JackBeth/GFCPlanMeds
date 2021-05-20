@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".navigationbar.MedicineFragment">
+    tools:context=".navigationbar.MedicineFragment"
+    android:background="@color/white">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/MedicineFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,57 +17,152 @@
             android:id="@+id/Medicine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/teal_200"
             android:padding="5dp"
             android:text="Medicine"
+            android:textColor="@color/black"
             android:textSize="35sp"
-            android:background="@color/teal_200"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/MedicineNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:text="Name of Medicine:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Medicine" />
 
         <TextView
             android:id="@+id/MedicineName"
-            android:layout_marginTop="20dp"
-            android:layout_width="421dp"
-            android:layout_height="39dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
             android:text="Name of Medicine"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.064"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MedicineNameLabel" />
+
+        <TextView
+            android:id="@+id/DosageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:text="Dosage:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MedicineName" />
+
 
         <TextView
             android:id="@+id/Dosage"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
             android:text="Dosage"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DosageLabel" />
+
+
+        <TextView
+            android:id="@+id/TakenAtLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:text="Should be taken:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Dosage" />
 
         <TextView
             android:id="@+id/TakenAt"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:text="Should be taken at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Should be taken"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TakenAtLabel" />
+
+        <TextView
+            android:id="@+id/DuringTheDayLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:text="Times during the day:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TakenAt" />
 
         <TextView
             android:id="@+id/DuringTheDay"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Times during the day"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DuringTheDayLabel" />
+
+        <TextView
+            android:id="@+id/DuringTheWeekLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:text="Times during the week:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DuringTheDay" />
 
         <TextView
             android:id="@+id/DuringTheWeek"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
             android:text="Times during the week"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DuringTheWeekLabel"
+            app:layout_constraintVertical_bias="0.0" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".navigationbar.InformationFragment"
     android:gravity="bottom"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/InformationFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,54 +22,139 @@
             android:id="@+id/Information"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="Information"
-            android:textSize="35sp"
             android:background="@color/teal_200"
-            android:textColor="@color/black"/>
+            android:padding="5dp"
+            android:text="User Information"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/InfoUserNameLabel"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:text="Name:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Information" />
 
         <TextView
             android:id="@+id/InfoUserName"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="56dp"
+            android:background="@color/browser_actions_bg_grey"
             android:ems="10"
             android:inputType="textPersonName"
             android:singleLine="true"
             android:text="Name"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/InfoUserNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/Information" />
+
+        <TextView
+            android:id="@+id/InfoPasswordLabel"
+            android:layout_width="103dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="Password:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/InfoUserNameLabel" />
 
         <TextView
             android:id="@+id/InfoPassword"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="200dp"
             android:text="Password"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/InfoPasswordLabel"
+            app:layout_constraintTop_toBottomOf="@+id/InfoUserName" />
+
+        <TextView
+            android:id="@+id/EmailAddressLabel"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="Email:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/InfoPasswordLabel" />
 
         <TextView
             android:id="@+id/EmailAddress"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="56dp"
+            android:background="@color/browser_actions_bg_grey"
             android:ems="10"
-            android:textSize="20sp"
             android:inputType="textEmailAddress"
             android:text="Email"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/EmailAddressLabel"
+            app:layout_constraintTop_toBottomOf="@+id/InfoPassword" />
+
+        <TextView
+            android:id="@+id/PhoneNoLabel"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:text="Phone no:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EmailAddressLabel"
+            app:layout_constraintVertical_bias="0.004" />
 
         <TextView
             android:id="@+id/PhoneNo"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="56dp"
             android:ems="10"
             android:inputType="phone"
             android:text="Phone no"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
-    </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/PhoneNoLabel"
+            app:layout_constraintTop_toBottomOf="@+id/EmailAddress"
+            app:layout_constraintVertical_bias="0.002" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

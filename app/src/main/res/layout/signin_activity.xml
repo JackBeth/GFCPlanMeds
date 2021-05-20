@@ -17,25 +17,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SignInPassword" />
-
-    <EditText
-        android:id="@+id/SignInPassword"
-        android:layout_width="129dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/white"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toEndOf="@+id/PasswordLabel"
-        app:layout_constraintTop_toBottomOf="@+id/SignInUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/SignInPassword"
+        app:layout_constraintVertical_bias="0.287" />
 
     <EditText
         android:id="@+id/SignInUserName"
         android:layout_width="129dp"
         android:layout_height="41dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="280dp"
         android:background="@color/white"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,25 +32,49 @@
         app:layout_constraintStart_toEndOf="@+id/UserNameLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/UserNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="264dp"
-        android:textSize="25dp"
-        android:text="UserName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/SignInPassword"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toEndOf="@+id/PasswordLabel"
+        app:layout_constraintTop_toBottomOf="@+id/SignInUserName" />
 
     <TextView
         android:id="@+id/PasswordLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="19dp"
-        android:textSize="25dp"
+        android:layout_marginTop="12dp"
         android:text="Password"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserNameLabel" />
+
+    <TextView
+        android:id="@+id/UserNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="288dp"
+        android:text="UserName"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="154dp"
+        android:layout_height="138dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104"
+        app:srcCompat="@drawable/ic_medical" />
 </androidx.constraintlayout.widget.ConstraintLayout>

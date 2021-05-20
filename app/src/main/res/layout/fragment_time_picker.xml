@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".navigationbar.AlarmSettings.TimePickerFragment">
+    tools:context=".navigationbar.AlarmSettings.TimePickerFragment"
+    android:background="@color/white">
 
-        <TextView
-            android:id="@+id/Alarm"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/TimePickerFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/teal_200"
-            android:padding="5dp"
-            android:text="Alarm"
-            android:textSize="35sp"
-            android:textColor="@color/black"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-</RelativeLayout>
+                <TextView
+                    android:id="@+id/Alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/teal_200"
+                    android:padding="5dp"
+                    android:text="Alarm"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/AlarmText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Alarm is set"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.204"
+                    android:textColor="@color/black"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

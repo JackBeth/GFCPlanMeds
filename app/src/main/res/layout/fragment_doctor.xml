@@ -1,57 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".navigationbar.DoctorFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/DoctorFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/teal_200"
             android:padding="5dp"
             android:text="Doctor's office"
+            android:textColor="@color/black"
             android:textSize="35sp"
-            android:background="@color/teal_200"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/OfficeNameLabel"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:text="Office Name:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/OfficeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_marginEnd="128dp"
+            android:background="@color/browser_actions_bg_grey"
             android:text="Office Name"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/OfficeNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/DoctorNameLabel"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="Doctor's Name:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/OfficeNameLabel" />
 
         <TextView
             android:id="@+id/DoctorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_marginEnd="108dp"
             android:text="Doctor's Name"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/DoctorNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/OfficeName" />
 
         <Button
             android:id="@+id/CallDoctor"
-            android:layout_marginTop="20dp"
             android:layout_width="210dp"
             android:layout_height="66dp"
             android:text="Call Doctor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/LinkToHomePage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.812" />
 
         <Button
             android:id="@+id/LinkToHomePage"
-            android:layout_marginTop="40dp"
-            android:layout_width="211dp"
-            android:layout_height="wrap_content"
+            android:layout_width="205dp"
+            android:layout_height="81dp"
+            android:layout_marginBottom="288dp"
             android:text="Go to homepage"
-            android:textSize="20sp"/>
-    </LinearLayout>
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

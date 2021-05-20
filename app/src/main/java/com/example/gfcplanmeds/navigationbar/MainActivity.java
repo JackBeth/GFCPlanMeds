@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new MedicineFragment(currentUser);
                     break;
                 case R.id.timePickerFragment:
-                    selectedFragment = new TimePickerFragment();
+                    selectedFragment = new TimePickerFragment(currentUser);
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment, selectedFragment).commit();
